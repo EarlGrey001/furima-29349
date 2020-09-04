@@ -37,69 +37,54 @@ Things you may want to cover:
 | first_name       | string | null: false |
 | family_name kana | string | null: false |
 | first_name kana  | string | null: false |
+| birthday         | string | null: false |
 
 ### Association
-- has_one  :cards
-- has_one  :purchasers
+- has_many :purchasers
 - has_many :items
 
 ## items テーブル
 
-| Column           | Type   | Options                        |
-| ---------------- | ------ | ------------------------------ |
-| name             | string | null: false                    |
-| price            | string | null: false                    |
-| comment          | string | null: false                    |
-| shipping_cost    | string | null: false                    |
-| shipping_days    | string | null: false                    |
-| category         | string | null: false                    |
-| bland            | string | null: false                    |
-| image            | string | null: false                    |
-| user_id          | string | null: false, foreign_key: true |
+| Column           | Type    | Options                        |
+| ---------------- | ------- | ------------------------------ |
+| name             | string  | null: false                    |
+| price            | integer | null: false                    |
+| comment          | string  | null: false                    |
+| shipping_cost    | string  | null: false                    |
+| shipping_days    | string  | null: false                    |
+| category         | string  | null: false                    |
+| bland            | string  | null: false                    |
+| image            | string  | null: false                    |
+| user_id          | string  | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :users
-- belongs_to :addresses
+- belongs_to :user
+- belongs_to :purchaser
+- belongs_to :address
 
 ## purchasers テーブル
 
 | Column           | Type   | Options     |
 | ---------------- | ------ | ----------- |
-| name             | string | null: false |
-| email            | string | null: false |
-| password         | string | null: false |
-| family_name      | string | null: false |
-| first_name       | string | null: false |
-| family_name kana | string | null: false |
-| first_name kana  | string | null: false |
+| user_id          | string | null: false |
+| item_id          | string | null: false |
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
+- has_many :items
+- has_one :addresses
 
 ## addresses テーブル
 
 | Column           | Type   | Options     |
 | ---------------- | ------ | ----------- |
 | postal_code      | string | null: false |
-| prefectures      | string | null: false |
 | city             | string | null: false |
 | address          | string | null: false |
-| building         | string | null: false |
+| building         | string |             |
 | phone_number     | string | null: false |
 ### Association
 
-- has_many :items
-
-## cards テーブル
-
-| Column   | Type   | Options                        |
-| -------- | ------ | ------------------------------ |
-| user_id  | string | null: false, foreign_key: true |
-| period   | string | null: false                    |
-| card_id  | string | null: false                    |
-
-### Association
-
-- belongs_to :users
+- belongs_to :purchasers
