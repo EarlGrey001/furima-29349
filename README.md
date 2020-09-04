@@ -36,6 +36,7 @@ Things you may want to cover:
 | family_name      | string | null: false |
 | first_name       | string | null: false |
 | family_name kana | string | null: false |
+| first_name kana  | string | null: false |
 
 ### Association
 - has_one  :cards
