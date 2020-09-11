@@ -12,7 +12,6 @@ describe User do
       it 'passwordが6文字以上で英数混合であれば登録できる' do
         @user.password = '000abc'
         @user.password_confirmation = '000abc'
-        binding.pry
         expect(@user).to be_valid
       end
     end
