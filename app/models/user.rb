@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   with_options presence: true do
     validates :nickname
     validates :password, length: { minimum: 6 }
@@ -17,5 +18,7 @@ class User < ApplicationRecord
     validates :first_name_kana
     validates_format_of :first_name_kana, with: /\A[ァ-ン]+\z/
     validates :birthday
+
+    #has_many :items
   end
 end
