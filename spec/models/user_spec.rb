@@ -7,7 +7,7 @@ describe User do
   describe 'ユーザー新規登録' do
     context '新規登録がうまくいくとき' do
       it 'nicknameとemail、passwordとpassword_confirmation、名前とそのカナと誕生日が存在すれば登録できる' do
-        user = FactoryBot.build(:user)
+        expect(@user).to be_valid
       end
       it 'passwordが6文字以上で英数混合であれば登録できる' do
         @user.password = '000abc'
