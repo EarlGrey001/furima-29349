@@ -5,7 +5,7 @@ describe Item do
   end
 
   describe '商品出品' do
-    context '新規登録がうまくいくとき' do
+    context '出品がうまくいくとき' do
       it '必要な情報が全て存在すれば出品できる' do
         expect(@item).to be_valid
       end
@@ -15,7 +15,7 @@ describe Item do
       end
     end
 
-    context '新規登録がうまくいかないとき' do
+    context '出品がうまくいかないとき' do
       it 'nameが空では登録できない' do
         @item.name = ''
         @item.valid?
