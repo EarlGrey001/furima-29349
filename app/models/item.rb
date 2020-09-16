@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   has_one_attached :image
 
-  validates :price, presence: true
+  validates :name, :price, :comment, :image, presence: true
   validates_format_of :price, with: /\A\d+\z/
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 
@@ -15,24 +15,22 @@ class Item < ApplicationRecord
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
+
+  validates :shipping_cost_id, :shipping_days_id, :shipping_state_id,:shipping_origin_id,:category_id, presence: true
+
   belongs_to_active_hash :category
-  validates :title, :text, :genre, presence: true
-  validates :genre_id, numericality: { other_than: 1 } 
+  validates :category_id, numericality: { other_than: 1 } 
 
   belongs_to_active_hash :state
-  validates :title, :text, :genre, presence: true
-  validates :genre_id, numericality: { other_than: 1 } 
+  validates :shipping_state_id, numericality: { other_than: 1 } 
 
   belongs_to_active_hash :cost
-  validates :title, :text, :genre, presence: true
-  validates :genre_id, numericality: { other_than: 1 } 
+  validates :shipping_cost_id, numericality: { other_than: 1 } 
 
   belongs_to_active_hash :area
-  validates :title, :text, :genre, presence: true
-  validates :genre_id, numericality: { other_than: 1 } 
+  validates :shipping_origin_id, numericality: { other_than: 1 } 
 
   belongs_to_active_hash :day
-  validates :title, :text, :genre, presence: true
-  validates :genre_id, numericality: { other_than: 1 } 
+  validates :shipping_days_id, numericality: { other_than: 1 } 
  
 end

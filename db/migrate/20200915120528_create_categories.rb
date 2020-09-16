@@ -4,5 +4,6 @@ class CreateCategories < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    drop_table :categories
   end
 end

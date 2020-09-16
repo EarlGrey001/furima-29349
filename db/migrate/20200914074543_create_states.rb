@@ -4,5 +4,6 @@ class CreateStates < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    drop_table :states
   end
 end
