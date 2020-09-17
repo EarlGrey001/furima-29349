@@ -9,11 +9,6 @@ describe User do
       it 'nicknameとemail、passwordとpassword_confirmation、名前とそのカナと誕生日が存在すれば登録できる' do
         expect(@user).to be_valid
       end
-      it 'passwordが6文字以上で英数混合であれば登録できる' do
-        @user.password = '000abc'
-        @user.password_confirmation = '000abc'
-        expect(@user).to be_valid
-      end
     end
     context '新規登録がうまくいかないとき' do
       it 'nicknameが空だと登録できない' do
