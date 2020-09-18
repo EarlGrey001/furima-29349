@@ -31,45 +31,45 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Comment can't be blank")
       end
-      it 'shipping_cost_idが空では登録できない' do
-        @item.shipping_cost_id = ''
+      it 'cost_idが空では登録できない' do
+        @item.cost_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping cost can't be blank")
+        expect(@item.errors.full_messages).to include("Cost can't be blank")
       end
-      it 'shipping_cost_idが1では登録できない' do
-        @item.shipping_cost_id = 1
+      it 'cost_idが1では登録できない' do
+        @item.cost_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping cost must be other than 1')
+        expect(@item.errors.full_messages).to include('Cost must be other than 1')
       end
-      it 'shipping_days_idが空では登録できない' do
-        @item.shipping_days_id = ''
+      it 'day_idが空では登録できない' do
+        @item.day_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping days can't be blank")
+        expect(@item.errors.full_messages).to include("Day can't be blank")
       end
-      it 'shipping_days_idが1では登録できない' do
-        @item.shipping_days_id = 1
+      it 'day_idが1では登録できない' do
+        @item.day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping days must be other than 1')
+        expect(@item.errors.full_messages).to include('Day must be other than 1')
       end
-      it 'shipping_state_idが空では登録できない' do
-        @item.shipping_state_id = ''
+      it 'state_idが空では登録できない' do
+        @item.state_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping state can't be blank")
+        expect(@item.errors.full_messages).to include("State can't be blank")
       end
-      it 'shipping_state_idが1では登録できない' do
-        @item.shipping_state_id = 1
+      it 'state_idが1では登録できない' do
+        @item.state_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping state must be other than 1')
+        expect(@item.errors.full_messages).to include('State must be other than 1')
       end
-      it 'shipping_origin_idが空では登録できない' do
-        @item.shipping_origin_id = ''
+      it 'area_idが空では登録できない' do
+        @item.area_id = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping origin can't be blank")
+        expect(@item.errors.full_messages).to include("Area can't be blank")
       end
-      it 'shipping_origin_idが1では登録できない' do
-        @item.shipping_origin_id = 1
+      it 'area_idが1では登録できない' do
+        @item.area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping origin must be other than 1')
+        expect(@item.errors.full_messages).to include('Area must be other than 1')
       end
       it 'category_idが空では登録できない' do
         @item.category_id = ''
