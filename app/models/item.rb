@@ -8,11 +8,11 @@ class Item < ApplicationRecord
     validates :price
     validates :comment
     validates :image
-    validates :shipping_state_id
+    validates :state_id
     validates :category_id
-    validates :shipping_cost_id
-    validates :shipping_origin_id
-    validates :shipping_days_id
+    validates :cost_id
+    validates :area_id
+    validates :day_id
   end
 
   validates_format_of :price, with: /\A\d+\z/
@@ -21,11 +21,11 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   with_options numericality: { other_than: 1 } do
-    validates :shipping_state_id
+    validates :state_id
     validates :category_id
-    validates :shipping_cost_id
-    validates :shipping_origin_id
-    validates :shipping_days_id
+    validates :cost_id
+    validates :area_id
+    validates :day_id
   end
 
   belongs_to_active_hash :category

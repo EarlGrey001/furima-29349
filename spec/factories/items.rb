@@ -3,11 +3,11 @@ FactoryBot.define do
     name                  { 'PC' }
     price                 { 100_000 }
     comment               { 'macbook-air' }
-    shipping_cost_id      { 3 }
-    shipping_days_id      { 3 }
-    shipping_state_id     { 3 }
-    shipping_origin_id    { 3 }
-    category_id           { 3 }
+    cost_id { 3 }
+    day_id { 3 }
+    state_id { 3 }
+    area_id { 3 }
+    category_id { 3 }
 
     association :user
 
