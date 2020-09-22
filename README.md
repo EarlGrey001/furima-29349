@@ -40,7 +40,7 @@ Things you may want to cover:
 | birthday         | date   | null: false |
 
 ### Association
-- has_many :purchasers
+- has_many :order
 - has_many :items
 
 ## items テーブル
@@ -60,9 +60,9 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :purchaser
+- has_one :order
 
-## purchasers テーブル
+## order テーブル
 
 | Column           | Type    | Options                        |
 | ---------------- | ------- | ------------------------------ |
@@ -88,4 +88,4 @@ Things you may want to cover:
 | purchaser_id     | integer | null: false, foreign_key: true |
 ### Association
 
-- belongs_to :purchaser
+- belongs_to :order
