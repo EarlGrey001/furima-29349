@@ -6,10 +6,10 @@ class OrdersController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    # @order = Order.new(price or item_id : order_params[:price or item_id])
+    @order = ItemDonation.new(order_params)
     if @order.valid?
       pay_item
-      # @order.save
+      @order.save
       return redirect_to root_path
     else
       render 'index'
@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.permit(:item_id, :token)
+    params.permit(:item_id,:postal_code,:area_id,:city,:building,:address,:phone_number,:token).merge(user_id: current_user.id)
     # ストロングパラメーターにitem_idのキーを設定しましょう
   end
 

@@ -80,7 +80,7 @@ Things you may want to cover:
 | Column           | Type    | Options                        |
 | ---------------- | ------- | ------------------------------ |
 | postal_code      | string  | null: false                    |
-| prefectures      | integer | null: false, active_hash       |
+| area_id          | integer | null: false, active_hash       |
 | city             | string  | null: false                    |
 | address          | string  | null: false                    |
 | building         | string  |                                |
