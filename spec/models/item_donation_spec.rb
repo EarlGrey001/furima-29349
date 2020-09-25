@@ -10,6 +10,21 @@ RSpec.describe ItemDonation, type: :model do
       expect(@item_donation).to be_valid
     end
 
+    it 'tokenが空だと保存できないこと' do
+      @item_donation.token = nil
+      @item_donation.valid?
+      expect(@item_donation.errors.full_messages).to include("Token can't be blank")
+    end
+    it 'user_idが空だと保存できないこと' do
+      @item_donation.user_id = nil
+      @item_donation.valid?
+      expect(@item_donation.errors.full_messages).to include("User can't be blank")
+    end
+    it 'item_idが空だと保存できないこと' do
+      @item_donation.item_id = nil
+      @item_donation.valid?
+      expect(@item_donation.errors.full_messages).to include("Item can't be blank")
+    end
     it 'postal_codeが空だと保存できないこと' do
       @item_donation.postal_code = nil
       @item_donation.valid?
