@@ -12,9 +12,15 @@ class ItemDonation
 
   validates :area_id, numericality: { other_than: 1 }
 
+  validates :token, presence: true
+  with_options presence: true do
+    validates :user_id
+    validates :item_id
+  end
+
   def save
     # 商品の情報を保存し、「item」という変数に入れている
-    order = Order.create(user_id: user_id, item_id: item_id)
+    order = Order.create!(user_id: user_id, item_id: item_id)
 
     Address.create(postal_code: postal_code, area_id: area_id, city: city, address: address, phone_number: phone_number, building: building, order_id: order.user_id)
   end
