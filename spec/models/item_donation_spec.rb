@@ -74,5 +74,11 @@ RSpec.describe ItemDonation, type: :model do
       @item_donation.valid?
       expect(@item_donation.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
     end
+    it 'phone_numberの情報に-が含まれていると保存できない' do
+      @item_donation.phone_number = 321 - 9876
+      @item_donation.valid?
+      binding.pry
+      expect(@item_donation.errors.full_messages).to include('Phone number is invalid')
+    end
   end
 end
