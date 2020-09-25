@@ -4,5 +4,4 @@ class Order < ApplicationRecord
   has_one :address
 
   attr_accessor :token
-
 end
