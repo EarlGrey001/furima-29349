@@ -6,7 +6,6 @@ class Address < ApplicationRecord
   with_options numericality: { other_than: 1 } do
     validates :area_id
   end
-  
-  belongs_to_active_hash :area
 
+  belongs_to_active_hash :area
 end
