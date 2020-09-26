@@ -45,6 +45,11 @@ RSpec.describe ItemDonation, type: :model do
       @item_donation.valid?
       expect(@item_donation.errors.full_messages).to include('Area is not a number')
     end
+    it 'area_idが1では登録できない' do
+      @item_donation.area_id = 1
+      @item_donation.valid?
+      expect(@item_donation.errors.full_messages).to include('Area must be other than 1')
+    end
     it 'cityが空だと保存できないこと' do
       @item_donation.city = nil
       @item_donation.valid?
