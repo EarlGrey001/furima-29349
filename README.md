@@ -40,7 +40,7 @@ Things you may want to cover:
 | birthday         | date   | null: false |
 
 ### Association
-- has_many :order
+- has_many :orders
 - has_many :items
 
 ## items テーブル
