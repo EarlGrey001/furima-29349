@@ -40,7 +40,7 @@ Things you may want to cover:
 | birthday         | date   | null: false |
 
 ### Association
-- has_many :purchasers
+- has_many :orders
 - has_many :items
 
 ## items テーブル
@@ -60,9 +60,9 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :purchaser
+- has_one :order
 
-## purchasers テーブル
+## order テーブル
 
 | Column           | Type    | Options                        |
 | ---------------- | ------- | ------------------------------ |
@@ -80,7 +80,7 @@ Things you may want to cover:
 | Column           | Type    | Options                        |
 | ---------------- | ------- | ------------------------------ |
 | postal_code      | string  | null: false                    |
-| prefectures      | integer | null: false, active_hash       |
+| area_id          | integer | null: false, active_hash       |
 | city             | string  | null: false                    |
 | address          | string  | null: false                    |
 | building         | string  |                                |
@@ -88,4 +88,4 @@ Things you may want to cover:
 | purchaser_id     | integer | null: false, foreign_key: true |
 ### Association
 
-- belongs_to :purchaser
+- belongs_to :order
